@@ -20,13 +20,9 @@ public class MainController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private UserValidator userValidator;
-
     @GetMapping("/")
-    public String view(@RequestParam(name = "name", defaultValue = "hello") String msg, Model model) {
-        model.addAttribute("msg", msg);
-        return "index";
+    public String view() {
+        return "redirect:/users";
     }
 
     @GetMapping("/users")
@@ -35,19 +31,5 @@ public class MainController {
         return "users";
     }
 
-    @GetMapping("/users/new")
-    public String getSignUp(Model model) {
-        model.addAttribute("user", new User());
-        return "sign_up";
-    }
 
-    @PostMapping("/users/new")
-    public String signUn(@ModelAttribute @Valid User user, BindingResult result) {
-        userValidator.validate(user, result);
-        if (result.hasErrors()) {
-            return "sign_up";
-        }
-        userService.save(user);
-        return "redirect:/users";
-    }
 }

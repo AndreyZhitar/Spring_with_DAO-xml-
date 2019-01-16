@@ -34,6 +34,8 @@
 <br>
 <div>
     <a href="/users/new"><input type="submit" value="Add user"></a>
+
+    <a href="/logout"><input type="submit" value="Exit"></a>
 </div>
 </body>
 </html>

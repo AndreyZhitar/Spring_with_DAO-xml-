@@ -1,4 +1,4 @@
-package com.zhitar.spring_mvc.dao;
+package com.zhitar.spring_mvc.repository;
 
 import com.zhitar.spring_mvc.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
